@@ -91,3 +91,13 @@ class PostsDAO:
             if post.pk == pk:
                 return post
         return
+
+    def get_post_by_pk_json(self, pk):
+        """
+        возвращает словарь по значению
+        """
+        posts = self.load_posts_json()
+        for post in posts:
+            if post["pk"] == pk:
+                return post
+        return
